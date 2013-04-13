@@ -61,7 +61,8 @@ class adsb_rx_block (gr.top_block):
 
       #if(options.rx_subdev_spec is None):
       #  options.rx_subdev_spec = ""
-      #self.u.set_subdev_spec(options.rx_subdev_spec)
+      if not options.rx_subdev_spec is None:
+        self.u.set_subdev_spec(options.rx_subdev_spec)
       if not options.antenna is None:
         self.u.set_antenna(options.antenna)
 
